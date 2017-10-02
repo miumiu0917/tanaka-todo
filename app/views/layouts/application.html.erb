@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <ul>
+          <li class="title"><h1>TODOアプリ</h1></li>
+          <li id="task-form">
+            <%= form_for(@task, url: tasks_path) do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+
+              <%= f.label :limit %>
+              <%= f.text_field :limit, data: { :date_format => 'YYYY/MM/DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY/MM/DD' %>
+
+              <%= f.submit "新規作成", class: "btn btn-primary" %>
+            <% end %>
+          </li>
+        </ul>
+      </header>
+      <div id="contents">
+        <%= yield %>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

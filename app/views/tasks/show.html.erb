@@ -1,0 +1,22 @@
+<h1>TODO一覧</h1>
+
+<ul class="tasks">
+  <% @tasks.each do |task| %>
+    <li>
+      <div class="task">
+        <%= form_for(task, url: "tasks/" + task.id.to_s, html: {method: "patch"}) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+
+            <%= f.label :limit %>
+            <%= f.text_field :limit, data: { :date_format => 'YYYY/MM/DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY/MM/DD' %>
+
+            <%= f.submit "更新", class: "btn btn-primary update" %>
+        <% end %>
+        <%= form_for(task, url: "tasks/" + task.id.to_s, html: {method: "delete", class: "delete-form"}) do |f| %>
+          <%= f.submit "削除", class: "btn btn-primary delete-btn" %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
