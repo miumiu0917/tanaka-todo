@@ -1,4 +1,4 @@
-<h1>TODO一覧</h1>
+<h1 class="task-head">TODO一覧</h1>
 
 <ul class="tasks">
   <% @tasks.each do |task| %>
@@ -11,10 +11,10 @@
             <%= f.label :limit %>
             <%= f.text_field :limit, data: { :date_format => 'YYYY/MM/DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY/MM/DD' %>
 
-            <%= f.submit "更新", class: "btn btn-primary update" %>
+            <%= f.submit "更新", class: "btn btn-default update" %>
         <% end %>
         <%= form_for(task, url: "tasks/" + task.id.to_s, html: {method: "delete", class: "delete-form"}) do |f| %>
-          <%= f.submit "削除", class: "btn btn-primary delete-btn" %>
+          <%= f.submit "削除", class: "btn btn-default delete-btn" %>
         <% end %>
       </div>
     </li>

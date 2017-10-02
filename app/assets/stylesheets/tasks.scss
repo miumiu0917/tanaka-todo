@@ -8,7 +8,7 @@ html, body{
 header {
   width: 100%;
   height: 200px;
-  background-color: #ccc;
+  background-color: #00a7db;
 
   li {
     display: inline-block;
@@ -17,6 +17,7 @@ header {
   .title {
     width: 70%;
     padding-left: 20%;
+    color: #eee;
   }
 
   #task-form {
@@ -30,12 +31,23 @@ header {
   }
 }
 
+.task-head {
+  color: #777;
+}
+
+form {
+  label {
+    color: #eee;
+  }
+}
+
 #wrap{
   width: 100%;
   position: relative;
   height:auto !important; /*IE6対策*/
   height: 100%; /*IE6対策*/
   min-height: 100%;
+  background-color: #f1f1f1;
 }
 
 #contents{
@@ -47,13 +59,13 @@ header {
 footer{
   width: 100%;
   height:100px;
-  background-color: #ddd;
+  background-color: #00a7db;
   position:absolute;
   bottom:0;
 }
 
 .task {
-  background-color: #ddd;
+  background-color: #00a7db;
   margin-bottom: 5px;
   border-radius: 5px;
   padding: 1% 10% 2%;
